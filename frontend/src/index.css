@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-textMain font-sans antialiased;
+    min-height: 100vh;
+  }
+}
+
+/* Custom Print Styles for Prescriptions */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-prescription, #printable-prescription * {
+    visibility: visible;
+  }
+  #printable-prescription {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 24px;
+    background: white;
+    box-shadow: none;
+    border: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
